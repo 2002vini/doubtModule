@@ -5,7 +5,12 @@ const message_sender=JSON.parse(document.getElementById('sender').textContent)
 let url = `ws://${window.location.host}/ws/socket-server/${room_id}`
 console.log(url)
 const chatsocket = new WebSocket(url)
-
+chatsocket.onopen = function (e) {
+    let message = document.getElementById('chat-messages')
+    message.insertAdjacentHTML('beforeend',
+        `<p>Hello I am Vini Hundlani</p>`
+    )
+}
 chatsocket.onmessage = function (e) {
     console.log("on messaging")
     let data = JSON.parse(e.data)

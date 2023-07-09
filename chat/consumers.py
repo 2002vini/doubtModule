@@ -21,6 +21,7 @@ class chatConsumer(AsyncWebsocketConsumer):
         data = json.loads(text_data)
         message_sender = data['message_sender']
         message_content = data['message']
+        
 
         await self.channel_layer.group_send(        # this line sends message to all the channels in the group
             self.group_name,

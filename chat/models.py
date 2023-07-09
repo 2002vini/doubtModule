@@ -30,5 +30,7 @@ class ChatMessage(models.Model):
     room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)
     message_content = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
+    file=models.FileField(blank=True,null=True,upload_to='doubts/')
+    
     class Meta:
         ordering = ['created_at',]

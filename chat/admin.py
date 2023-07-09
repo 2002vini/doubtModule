@@ -7,7 +7,7 @@ class CustomChatRoom(admin.ModelAdmin):
     list_display = ['id', 'name', 'slug', 'room_id']
 
 class CustomChatMessage(admin.ModelAdmin):
-    list_display = ['id', 'sender', 'room', 'created_at', 'message_content']
+    list_display = ['id', 'sender', 'room', 'created_at', 'message_content','file']
 
 class CustomProfile(admin.ModelAdmin):
     list_display=['user','unique_id','teacher']
